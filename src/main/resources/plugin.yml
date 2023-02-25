@@ -1,0 +1,6 @@
+name: MyPlugin
+version: '${project.version}'
+main: me.egorich.myplugin.MyPlugin
+api-version: 1.18
+authors: [ Egorich ]
+description: This is my first plugin bla bla bla
