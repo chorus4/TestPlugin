@@ -25,11 +25,11 @@ jobs:
 
 #        Дальше деплой на ssh сервер
 
-#      - run: mkdir "$HOME/.ssh/key"
-#      - run: echo "${{ secrets.key }}" > "$HOME/.ssh/key"
-#      - run: chmod 600 "$HOME/.ssh/key"
-#
-#      - run: cd target && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no -p port" --archive --compress --delete Builder.jar user@8.8.8.8:/folder
+    - run: mkdir "$HOME/.ssh/key"
+    - run: echo "${{ secrets.key }}" > "$HOME/.ssh/key"
+    - run: chmod 600 "$HOME/.ssh/key"
+
+    - run: cd target && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no -p 11233" --archive --compress --delete Builder.jar ubuntu@6.tcp.eu.ngrok.io:/lobby/plugins
 
     - uses: actions/upload-artifact@v3
       with:
