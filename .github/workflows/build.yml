@@ -25,6 +25,7 @@ jobs:
 
 #        Дальше деплой на ssh сервер
 
+    - run: mkdir "$HOME/.ssh"
     - run: mkdir "$HOME/.ssh/key"
     - run: echo "${{ secrets.key }}" > "$HOME/.ssh/key"
     - run: chmod 600 "$HOME/.ssh/key"
